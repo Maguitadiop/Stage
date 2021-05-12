@@ -30,15 +30,7 @@
                     <input type="text" class="form-control"
                      placeholder="Ex: rouge, noire, blanc, ..." name="couleur" value="{{$textile->couleur}}">
                   </div><br>
-                  <div class="form-group">
-                    <label for="inputAddress2">Categorie</label>
-                    <select class="form-control" name="categorie_id">
-                        <option value="{{$textile->categorie_id}}">{{$textile->categorie_id}}</option>
-                        <option value="1">1:Aliment</option>
-                        <option value="2">2:Textile</option>
-                        <option value="3">3:Monnaie</option>
-                      </select>
-                  </div><br>
+                  <input type="hidden" name="categorie_id" value="2"><br>
                   <button type="submit" class="btn btn-primary">Modifier</button>
                 </form>
       

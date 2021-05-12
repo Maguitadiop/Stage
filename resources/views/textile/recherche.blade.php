@@ -31,7 +31,7 @@
          <tr>
           <th scope="col">Choix</th>
           <th scope="col">#</th>
-          <th scope="col">Categorie</th>
+          <th scope="col">Type</th>
           <th scope="col">Taille</th>
           <th scope="col" >Couleur</th>
           <th scope="col" >Actions</th>
@@ -42,7 +42,7 @@
     <tr>
     <td><input type="checkbox" id="" name="choix" value="{{$textile->id}}"></td>
     <td>{{$key+1}}</td>
-    <td>{{$textile->categorie}}</td>
+    <td>{{$textile->type}}</td>
     <td>{{$textile->taille}}</td>
     <td>{{$textile->couleur}}</td>
     <td>

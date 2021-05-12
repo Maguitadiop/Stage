@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DonationTextile;
 use App\Models\Textile;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class textileController extends Controller
         $textile->type = request('type');
         $textile->taille = request('taille');
         $textile->couleur = request('couleur');
-        $textile->categorie_id = request('categorie_id');
+        $textile->categorie_id = 2;
 
         $textile->save();
         return redirect('/listeTextile');
@@ -52,6 +53,30 @@ class textileController extends Controller
         $textiles->delete();
        
         return redirect()->back();     
+    }
+
+    
+    public function DonnerViaPannier(){
+        
+        for($i=0;$i<sizeof($_POST['choix']);$i++)
+        {
+            $textile = Textile::find($_POST['choix'][$i]);
+            $don = new DonationTextile();
+            $don->categorie_id = 2;
+            $don->type = $textile->type;
+            $don->famille_id= $_POST['famille_id'];
+            $don->textile_id= $_POST['choix'][$i];
+            $don->taille = $textile->taille;
+            $don->couleur = $textile->couleur;
+            $don->save();
+        }
+        for($i=0;$i<sizeof($_POST['choix']);$i++)
+        {
+        $textile=Textile::find($_POST['choix'][$i]);
+
+        }
+        
+        return redirect('/listeDonationTextile');
     }
 }
 

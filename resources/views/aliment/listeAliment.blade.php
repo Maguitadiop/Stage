@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,6 +24,8 @@
           <input type="search" name="q" placeholder="Recherche..." />
           <input type="submit" value="Valider" />
         </form><br>
+      <form method="POST" action="/PanierDonationAliment">
+     {{ csrf_field() }}
      <table class="table">
        <thead>
          <tr>
@@ -36,7 +39,7 @@
        <tbody>
            @foreach ($aliments as $key => $aliment)    
     <tr>
-    <td><input type="checkbox" id="" name="choix" value="{{$aliment->id}}"></td>
+    <td><input type="checkbox" id="{{$aliment->libelle}}" name="choix[]" value="{{$aliment->id}}"></td>
     <td>{{$key+1}}</td>
     <td>{{$aliment->libelle}}</td>
     <td>{{$aliment->quantite}}</td>
@@ -45,12 +48,15 @@
 
       <a href="{{('/listeAliment/destroyAliment')}}/{{$aliment->id}}" class="badge badge-danger">Supprimer</a>
       </td>
+
     </tr>
         @endforeach
   </tbody>
 </table>
      </div>
-     <button type="button" class="btn btn-secondary">Donation</button>
+    
+     <button type="submit" class="btn btn-secondary">Donation</button>
+     </form>
      <script src="/js/jquery-3.3.1.slim.min.js" ></script>
       <script src="/js/popper.min.js" ></script>
       <script src="/js/bootstrap.min.js" ></script>

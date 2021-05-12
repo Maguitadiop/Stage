@@ -29,15 +29,7 @@
                     <input type="number" class="form-control" id="inputPassword4"
                      placeholder="" name="quantite" value="{{$aliment->quantite}}">
                   </div>
-                  <div class="form-group"><br>
-                    <label for="inputAddress2">Categorie</label>
-                    <select class="form-control" name="categorie_id">
-                        <option value="{{$aliment->categorie_id}}">{{$aliment->categorie_id}}</option>
-                        <option value="1">1:Aliment</option>
-                        <option value="2">2:Textile</option>
-                        <option value="3">3:Monnaie</option>
-                      </select>
-                  </div><br>
+                  <input type="hidden" name="categorie_id" value="1"><br>
                   <button type="submit" class="btn btn-primary">Modifier</button>
                 </form>
     </div>

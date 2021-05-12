@@ -30,15 +30,7 @@
                     <input type="text" class="form-control"
                      placeholder="Ex: rouge, noire, blanc, ..." name="couleur">
                   </div>
-                  <div class="form-group">
-                    <label for="inputAddress2">Categorie</label>
-                    <select class="form-control" name="categorie_id">
-                        <option selected>Choisissez une categorie : </option>
-                        <option value="1">1:Aliment</option>
-                        <option value="2">2:Textile</option>
-                        <option value="3">3:Monnaie</option>
-                      </select>
-                  </div>
+                  
                   <button type="submit" class="btn btn-primary">Ajouter</button>
                 </form>
       

@@ -23,6 +23,8 @@
           <input type="search" name="q" placeholder="Recherche..." />
           <input type="submit" value="Valider" />
         </form><br>
+        <form method="POST" action="/PanierDonationMonnaie">
+          {{ csrf_field() }}
      <table class="table">
        <thead>
          <tr>
@@ -36,7 +38,7 @@
        <tbody>
            @foreach ($monnaies as $key => $monnaie)    
     <tr>
-    <td><input type="checkbox" id="" name="choix" value="{{$monnaie->id}}"></td>
+      <td><input type="checkbox" id="{{$monnaie->devise}}" name="choix[]" value="{{$monnaie->id}}"></td>
     <td>{{$key+1}}</td>
     <td>{{$monnaie->devise}}</td>
     <td>{{$monnaie->montant}}</td>
@@ -50,7 +52,8 @@
   </tbody>
 </table>
      </div>
-     <button type="button" class="btn btn-secondary">Donation</button>
+     <button type="submit" class="btn btn-secondary">Donation</button>
+    </form>
      <script src="/js/jquery-3.3.1.slim.min.js" ></script>
       <script src="/js/popper.min.js" ></script>
       <script src="/js/bootstrap.min.js" ></script>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDonations extends Migration
+class CreateDonationTextiles extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,23 @@ class CreateDonations extends Migration
      */
     public function up()
     {
-        Schema::create('donations', function (Blueprint $table) {
+        Schema::create('donation_textiles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('famille_id')->unsigned();
             $table->integer('categorie_id')->unsigned();
+            $table->integer('textile_id')->unsigned();
+            $table->string('type');
+            $table->string('taille');
+            $table->string('couleur');
+            $table->timestamps();
 
             $table->foreign('famille_id')->references('id')->on('familles')
             ->onDelete('restrict')->onUpdate('restrict');
 
             $table->foreign('categorie_id')->references('id')->on('categories')
             ->onDelete('restrict')->onUpdate('restrict');
-
-            $table->date('date');
-            $table->timestamps();
+            $table->foreign('textile_id')->references('id')->on('textiles')
+            ->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
@@ -36,6 +40,6 @@ class CreateDonations extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('donations');
+        Schema::dropIfExists('donation_textiles');
     }
 }

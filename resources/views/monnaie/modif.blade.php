@@ -25,15 +25,7 @@
                     <input type="number" class="form-control" id="inputPassword4"
                      placeholder="" name="montant" value="{{$monnaie->montant}}">
                   </div><br>
-                  <div class="form-group">
-                    <label for="inputAddress2">Categorie</label>
-                    <select class="form-control" name="categorie_id">
-                        <option value="{{$monnaie->categorie_id}}">{{$monnaie->categorie_id}}</option>
-                        <option value="1">1:Aliment</option>
-                        <option value="2">2:Textile</option>
-                        <option value="3">3:Monnaie</option>
-                      </select>
-                  </div><br>
+                  <input type="hidden" name="categorie_id" value="3"><br>
                   <button type="submit" class="btn btn-primary">Modifier</button>
                 </form>
       

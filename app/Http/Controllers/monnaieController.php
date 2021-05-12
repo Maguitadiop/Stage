@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DonationMonnaie;
 use App\Models\Monnaie;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class monnaieController extends Controller
         $monnaie = new Monnaie();
         $monnaie->devise = request('devise');
         $monnaie->montant = request('montant');
-        $monnaie->categorie_id = request('categorie_id');
+        $monnaie->categorie_id = 3;
 
         $monnaie->save();
         return redirect('/listeMonnaie');
@@ -55,5 +56,32 @@ class monnaieController extends Controller
         $monnaies->delete();
        
         return redirect()->back();     
+    }
+
+    public function DonnerViaPannier()
+    {
+        
+        for($i=0;$i<sizeof($_POST['choix']);$i++)
+        {
+        $monnaie=Monnaie::find($_POST['choix'][$i]);
+        
+        if($monnaie->montant==$_POST['montants'][$i]){$monnaie->montant = 0; $monnaie->save();}
+        else{
+            $monnaie->montant = $monnaie->montant - $_POST['montants'][$i];
+            $monnaie->save();
+        }
+        }
+        for($i=0;$i<sizeof($_POST['choix']);$i++)
+        {
+            $produit = Monnaie::find($_POST['choix'][$i]);
+            $don = new DonationMonnaie();
+            $don->famille_id= $_POST['famille_id'];
+            $don->categorie_id = 3;
+            $don->monnaie_id= $_POST['choix'][$i];
+            $don->montant = $_POST['montants'][$i];
+            $don->devise = $produit->devise;
+            $don->save();
+        } 
+        return redirect('/listeDonationMonnaie');
     }
 }

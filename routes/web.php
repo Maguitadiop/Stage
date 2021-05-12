@@ -80,3 +80,28 @@ Route::get('/recherchePersonne','App\Http\Controllers\PersonneController@recherc
 
 
 //Donation
+
+Route::get('/PanierDonationAliment', function(){
+    return view('Donation/DonationAliment');
+});
+Route::post('/PanierDonationAliment', function(){
+    return view('Donation/DonationAliment');
+});
+Route::post('/panierDonationAliment/updatealiment','App\Http\Controllers\alimentController@DonnerViaPannier');
+Route::get('/listeDonationAliment','App\Http\Controllers\donationController@listeDonationAliment');
+Route::get('/rechercheDonationAliment','App\Http\Controllers\donationController@recherche');
+
+Route::post('/PanierDonationTextile', function(){
+    return view('Donation/donationTextile');
+});
+Route::post('/panierDonationTextile/updateTextile','App\Http\Controllers\textileController@DonnerViaPannier');
+Route::get('/listeDonationTextile','App\Http\Controllers\donationController@listeDonationTextile');
+Route::get('/rechercheDonationTextile','App\Http\Controllers\donationController@rechercheDonTex');
+
+Route::post('/PanierDonationMonnaie', function(){
+    return view('Donation/donationMonnaie');
+});
+Route::post('/panierDonationMonnaie/updateMonnaie','App\Http\Controllers\monnaieController@DonnerViaPannier');
+Route::get('/listeDonationMonnaie','App\Http\Controllers\donationController@listeDonationMonnaie');
+Route::get('/rechercheDonationMonnaie','App\Http\Controllers\donationController@rechercheDonationMonnaie');
+
