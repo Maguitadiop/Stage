@@ -1,0 +1,21 @@
+les informations de connexion.
+
+
+
+
+Authentification PhpMyAdmin : 
+                            login : root
+                            mot de passe : 
+le mot de passe est vide.
+
+pour l'application :
+
+On a crée un utilisateur admin : il a comme email : admin@gmail.com et comme mot de passe : 12345678.
+Si vous voulez, vous pouvez créer un autre utilisateur mais le mot de passe doit contenir au moins 8 caractéres.
+
+
+Dans  la table categorie on a insérer 3 types : Aliment qui a comme id 1
+                                                Textile a pour id 2
+                                               et Monnaie qui a pour 3
+
+Et c'est à partir de la table catégorie qu'on pourra créer les autres tables comme parexemple:aliment, textile et monnaie.
