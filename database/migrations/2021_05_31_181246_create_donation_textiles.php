@@ -17,7 +17,7 @@ class CreateDonationTextiles extends Migration
             $table->increments('id');
             $table->integer('famille_id')->unsigned();
             $table->integer('categorie_id')->unsigned();
-            $table->integer('textile_id')->unsigned();
+            
             $table->string('type');
             $table->string('taille');
             $table->string('couleur');
@@ -27,8 +27,6 @@ class CreateDonationTextiles extends Migration
             ->onDelete('restrict')->onUpdate('restrict');
 
             $table->foreign('categorie_id')->references('id')->on('categories')
-            ->onDelete('restrict')->onUpdate('restrict');
-            $table->foreign('textile_id')->references('id')->on('textiles')
             ->onDelete('restrict')->onUpdate('restrict');
         });
     }

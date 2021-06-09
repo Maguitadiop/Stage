@@ -15,6 +15,7 @@
     </style>
     </head>
     <body>
+        @include('./header')
     <div id="forme">
         <form action ="/listeAliment/updateAliment/{{$aliment->id}}" method='POST' >
             {{ csrf_field() }}
@@ -36,5 +37,6 @@
       
                 <script src="js/bootstrap.min.js"></script>
                 <script src="js/bootstrap.bundle.min.js"></script>
+                @include('./pied')
     </body>
 </html>

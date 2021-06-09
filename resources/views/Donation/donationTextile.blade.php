@@ -12,7 +12,7 @@
     </style>
     </head>
     <body>
-        
+        @include('./header')
         <form action ="/panierDonationTextile/updateTextile" method='POST' id="form">
             {{ csrf_field() }}
                   <h3 id="h3">Panier Textile</h3><br>
@@ -57,5 +57,6 @@
       
                 <script src="js/bootstrap.min.js"></script>
                 <script src="js/bootstrap.bundle.min.js"></script>
+                @include('./pied')
     </body>
 </html>

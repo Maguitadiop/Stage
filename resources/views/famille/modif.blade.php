@@ -12,6 +12,7 @@
     </style>
     </head>
     <body>
+      @include('./header')
         <form action ="/listeFamille/updateFamille/{{$famille->id}}" method='POST' id="form">
             {{ csrf_field() }}
                   <h3 id="h3">Formulaire de modification</h3><br>
@@ -36,5 +37,6 @@
       
                 <script src="js/bootstrap.min.js"></script>
                 <script src="js/bootstrap.bundle.min.js"></script>
+                @include('./pied')
     </body>
 </html>

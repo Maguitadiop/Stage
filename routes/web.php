@@ -105,3 +105,10 @@ Route::post('/panierDonationMonnaie/updateMonnaie','App\Http\Controllers\monnaie
 Route::get('/listeDonationMonnaie','App\Http\Controllers\donationController@listeDonationMonnaie');
 Route::get('/rechercheDonationMonnaie','App\Http\Controllers\donationController@rechercheDonationMonnaie');
 
+
+Route::get('/listeDonation', function(){
+    return view('Donation/listeDonation');
+});
+
+
+

@@ -11,6 +11,7 @@
       }
     </style>
 <body>
+  @include('./header')
      <div class="container">
         <ul class="nav">
           <li class="nav-item"> 
@@ -56,5 +57,6 @@
      <script src="/js/jquery-3.3.1.slim.min.js" ></script>
       <script src="/js/popper.min.js" ></script>
       <script src="/js/bootstrap.min.js" ></script>
+      @include('./pied')
 </body>
 </html>

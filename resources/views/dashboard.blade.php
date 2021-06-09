@@ -5,6 +5,7 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+      @include('./header')
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
@@ -65,7 +66,7 @@
                             <p class="card-text">Découvrer en un clic les personnes qui bénéficeront des dons apportés.</p>
                           </div>
                           <div class="card-footer">
-                            <small class="text-muted"><a href="/listeFamille">Consulter les personnes</a></small>
+                            <small class="text-muted"><a href="/listePersonne">Consulter les personnes</a></small>
                           </div>
                         </div>
                         <div class="card">
@@ -77,19 +78,16 @@
                             </p>
                           </div>
                           <div class="card-footer">
-                            <small class="text-muted"><a href="/listeMonnaie">Consulter le stock sortant</a></small>
+                            <small class="text-muted"><a href="/listeDonation">Consulter le stock sortant</a></small>
                           </div>
                         </div>
                       </div>
-                      </div>
-
-
-
-
+                    </div>
             </div>
         </div>
     </div>
 </x-app-layout>
+@include('./pied')
 
 
 

@@ -11,7 +11,6 @@ class DonationTextile extends Model
     protected $fillable = [
         'famille_id',
         'categorie_id',
-        'textile_id',
         'type',
         'taille',
         'couleur',

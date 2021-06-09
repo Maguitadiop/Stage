@@ -65,14 +65,15 @@ class textileController extends Controller
             $don->categorie_id = 2;
             $don->type = $textile->type;
             $don->famille_id= $_POST['famille_id'];
-            $don->textile_id= $_POST['choix'][$i];
             $don->taille = $textile->taille;
             $don->couleur = $textile->couleur;
             $don->save();
+
         }
         for($i=0;$i<sizeof($_POST['choix']);$i++)
         {
-        $textile=Textile::find($_POST['choix'][$i]);
+           $textile=Textile::find($_POST['choix'][$i]);
+           $textile->delete();
 
         }
         

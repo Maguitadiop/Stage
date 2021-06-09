@@ -12,7 +12,7 @@
     </style>
     </head>
     <body>
-
+      @include('./header')
         <form action ="/listePersonne/updatePersonne/{{$personne->id}}" method='POST' id="form">
             <h3 id="h3">Formulaire de modification</h3><br>
             {{ csrf_field() }}
@@ -55,5 +55,6 @@
               </div><br>
             <button type="submit" class="btn btn-primary">Modifier</button>
           </form>
+          @include('./pied')
     </body>
 </html>

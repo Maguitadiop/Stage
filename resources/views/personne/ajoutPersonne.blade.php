@@ -12,7 +12,7 @@
     </style>
     </head>
     <body>
-
+      @include('./header')
         <form action ="/ajoutPersonne" method='POST' id="form">
             <h3 id="h3">Formulaire d'ajout personne</h3><br>
             {{ csrf_field() }}
@@ -56,5 +56,6 @@
               </div>
             <button type="submit" class="btn btn-primary">Ajouter</button>
           </form>
+          @include('./pied')
     </body>
 </html>
